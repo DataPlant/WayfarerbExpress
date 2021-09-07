@@ -28,6 +28,13 @@ router.post('/new', (req, res) => {
         res.json(createdPost)
     })
 })
+router.get('/new', (req, res) => {
+    db.Cities.find({}, (err, foundCity) => {
+        if (err) return console.log(err)
+
+        res.json(foundCity)
+    })
+})
 
 router.put('/:id', (req, res) => {
     db.Post.findByIdAndUpdate(
