@@ -7,7 +7,7 @@ const postSchema = new Schema ({
     title: String,
     content: String,
     img: String,
-    city: { type:mongoose.Types.ObjectId, ref: 'Cities'}
+    cities: { type:mongoose.Types.ObjectId, ref: 'Cities'}
 })
 
 const Post = mongoose.model('Post', postSchema)
