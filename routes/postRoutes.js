@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
     db.Post.findById(req.params.id)
-    .populate('cities')
+    .populate('cityId')
     .exec((err, foundPost) => {
         if(err) return console.log(err);
 
@@ -21,18 +21,18 @@ router.get('/:id', (req, res) => {
     }) 
 })
 
-router.post('/new', (req, res) => {
+router.post('/', (req, res) => {
+    console.log(req.body)
     db.Post.create(req.body, (err, createdPost) => {
-        if (err) return console.log(err)
+        db.Cities.findByIdAndUpdate(createdPost.cityId, 
+            { $push: { posts: createdPost } }, 
+            (err, foundCity) => {
+            if (err) return console.log(err)
+            console.log(foundCity)
 
-        res.json(createdPost)
-    })
-})
-router.get('/new', (req, res) => {
-    db.Cities.find({}, (err, foundCity) => {
-        if (err) return console.log(err)
-
-        res.json(foundCity)
+            res.json(createdPost)
+        })
+        
     })
 })
 
