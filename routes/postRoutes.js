@@ -12,7 +12,9 @@ router.get('/', (req, res) => {
 })
 
 router.get('/:id', (req, res) => {
-    db.Post.findById(req.params.id, (err, foundPost) => {
+    db.Post.findById(req.params.id)
+    .populate('cityId')
+    .exec((err, foundPost) => {
         if(err) return console.log(err);
 
         res.json(foundPost)
@@ -20,10 +22,17 @@ router.get('/:id', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-    db.Post.create(req.body, (err, savedPost) => {
-        if (err) return console.log(err)
+    console.log(req.body)
+    db.Post.create(req.body, (err, createdPost) => {
+        db.Cities.findByIdAndUpdate(createdPost.cityId, 
+            { $push: { posts: createdPost } }, 
+            (err, foundCity) => {
+            if (err) return console.log(err)
+            console.log(foundCity)
 
-        res.json(savedPost)
+            res.json(createdPost)
+        })
+        
     })
 })
 
