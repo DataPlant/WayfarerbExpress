@@ -1,8 +1,6 @@
 const router = require('express').Router();
 const db = require('../models/index.js');
 
-
-
 router.get('/', (req, res) => {
     db.Post.find({}, (err, foundPost) => {
         if (err) return console.log(err);
@@ -56,5 +54,6 @@ router.delete('/:id', (req, res) => {
         res.json({message: 'Deleted'})
     })
 })
-module.exports = router;
 
+
+module.exports = router;
