@@ -12,10 +12,6 @@ router.get('/', (req, res) => {
     })
 })
 
-// router.get('/newCity', (req, res) => {
-    
-// })
-
 router.get('/:id', (req, res) => {
     db.Cities.findById(req.params.id)
     .populate('posts')
@@ -26,11 +22,11 @@ router.get('/:id', (req, res) => {
     }) 
 })
 
-router.post('/new', (req, res) => {
+router.post('/', (req, res) => {
     db.Cities.create(req.body, (err, createdCity) => {
         if (err) return console.log(err)
-
-        res.redirect('/cities')
+        
+        res.json(createdCity)
     })
 })
 
