@@ -10,8 +10,9 @@ const app = express()
 //middleware ifeiwjefowejofijweiof
 app.use(cors());
 app.use(express.json())
-app.use(cityRoutes)
-app.use(postRoutes)
+app.use('/cities', cityRoutes)
+app.use('/post', postRoutes)
+// app.post('/')
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`)
