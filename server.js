@@ -12,7 +12,6 @@ app.use(cors())
 app.use(express.json())
 app.use('/cities', cityRoutes)
 app.use('/post', postRoutes)
-// app.post('/')
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`)
