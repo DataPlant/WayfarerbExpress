@@ -5,6 +5,7 @@ const citySchema = new Schema({
     cityname: String,
     country: String,
     headerimg: String,
+    content: String,
     posts: [{ type:mongoose.Types.ObjectId, ref: 'Post'}]
 })
 
