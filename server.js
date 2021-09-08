@@ -1,14 +1,16 @@
 require('dotenv').config()
-const express = require('express');
 const cors = require('cors')
-const cityRoutes = require('./routes/cityRoutes')
-const postRoutes = require('./routes/postRoutes')
+const session = require('express-session')
+const express = require('express')
+const cityRoutes = require('./controllers/cityController')
+const postRoutes = require('./controllers/postController')
 
 const port = process.send.PORT || 4000
 const app = express()
 
-//middleware ifeiwjefowejofijweiof
-app.use(cors());
+///////////// Middleware /////////////
+app.use(cors())
+// app.use(session({ secret: process.env.SESSION_SECRET }))
 app.use(express.json())
 app.use('/cities', cityRoutes)
 app.use('/post', postRoutes)
