@@ -8,7 +8,6 @@ Project Wayfarer is a city blog site that allows users to
 -  [Planned Features](#Unfinished-Features)
 -  [Technologies Used](#Technologies-Used)
 -  [Challenges](#Challenges)
--  [Lessons Learned](#Lessons-Learned)
 -  [Wireframes](#Wireframes)
 -  [Screenshots](#Screenshots)
 
@@ -49,9 +48,11 @@ Project Wayfarer is a city blog site that allows users to
 - Dotenv
 - REST
 - Git/Github
+- Atlasdb
 
 ## Challenges
-
+- Dropdown menu for city database
+- Linking main page city component to city page
 
 ## Wireframes
 
