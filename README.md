@@ -61,14 +61,8 @@ Project Wayfarer is a city blog site that allows users to
 ![](/resources/DiagramWireframe2.png)
 
 ## Screenshots
-### Homepage
-![](/resources/Homepage.png)
 ### Citylist
 ![](/resources/CityListPage.png)
-### City Page
-![](/resources/CityPage.png)
-### Posts Section
-![](/resources/CityPagePosts.png)
 
 ## Details
 ### Frontend-Details
