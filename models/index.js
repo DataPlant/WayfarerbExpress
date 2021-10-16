@@ -1,17 +1,18 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
-const connectionString = process.env.MONGODB_URI;
+// Fire off the connection to Mongo DB
+mongoose.connect(process.env.MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+  useFindAndModify: false
+});
 
-const configOptions = {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-};
 
-mongoose.connect(connectionString, configOptions)
-  .then(() => console.log('MongoDB successfully connected...'))
-  .catch((err) => console.log(`MongoDB connection error: ${err}`));
+mongoose.connection.on('connected', () => {
+  console.log(`Mongoose connected to ${mongoose.connection.host}:${mongoose.connection.port}`);
+});
 
-module.exports = {
-    Cities: require('./Cities'),
-    Post: require('./Post')
-}
+mongoose.connection.on("error", (err) => {
+  console.log("Could not connect to MongoDB!", err);
+});
