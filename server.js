@@ -4,7 +4,7 @@ const express = require('express')
 const cityRoutes = require('./controllers/cityController')
 const postRoutes = require('./controllers/postController')
 
-const port = process.send.PORT || 4000
+const port = (process.send.PORT || 4000)
 const app = express()
 
 ///////////// Middleware /////////////
