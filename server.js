@@ -3,10 +3,9 @@ const cors = require('cors')
 const express = require('express')
 const cityRoutes = require('./controllers/cityController')
 const postRoutes = require('./controllers/postController')
+
 const app = express()
-
 const port = process.env.PORT || 4000
-
 
 ///////////// Middleware /////////////
 app.use(cors())
