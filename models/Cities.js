@@ -9,9 +9,9 @@ const citySchema = new Schema({
     posts: [{ type:mongoose.Types.ObjectId, ref: 'Post'}]
 })
 
-const City = mongoose.model('City', citySchema);
+const Cities = mongoose.model('Cities', citySchema);
 
-module.exports = City;
+module.exports = Cities;
 
 ////testcopies for postman
 
