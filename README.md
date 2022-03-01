@@ -50,25 +50,9 @@ Project Wayfarer is a city blog site that allows users to
 - Git/Github
 - Atlasdb
 
-## Challenges
-- Dropdown menu for city database
-- Linking main page city component to city page
-
-## Wireframes
-
-![](/resources/DiagramWireframe.png)
-
-![](/resources/DiagramWireframe2.png)
-
 ## Screenshots
-### Homepage
-![](/resources/Homepage.png)
 ### Citylist
 ![](/resources/CityListPage.png)
-### City Page
-![](/resources/CityPage.png)
-### Posts Section
-![](/resources/CityPagePosts.png)
 
 ## Details
 ### Frontend-Details
